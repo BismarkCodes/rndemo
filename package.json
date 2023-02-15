@@ -12,10 +12,15 @@
   "dependencies": {
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/native-stack": "^6.9.8",
+    "cheerio": "npm:react-native-cheerio",
     "react": "18.2.0",
     "react-native": "0.71.1",
+    "react-native-navigation-bar-color": "^2.0.2",
     "react-native-safe-area-context": "^4.5.0",
-    "react-native-screens": "^3.19.0"
+    "react-native-screens": "^3.19.0",
+    "rn-fetch-blob": "^0.12.0",
+    "url-join": "^5.0.0",
+    "use-debounce": "^9.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -23,6 +28,7 @@
     "@babel/runtime": "^7.20.0",
     "@react-native-community/eslint-config": "^3.0.0",
     "@tsconfig/react-native": "^2.0.2",
+    "@types/cheerio": "^0.22.31",
     "@types/jest": "^29.2.1",
     "@types/react": "^18.0.24",
     "@types/react-test-renderer": "^18.0.0",

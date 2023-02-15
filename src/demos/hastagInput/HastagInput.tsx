@@ -9,6 +9,7 @@ import {
 import React, {useEffect, useState} from 'react';
 
 import {Colors} from '../../constants/colors';
+import {GlobalStyles} from '../../components/GlobalStyles';
 import HashTagText from '../../components/text/HashTagText';
 
 function findHashTags(str: string) {
@@ -82,7 +83,7 @@ const HastagInput = (): JSX.Element => {
       </ScrollView>
       <View
         style={[
-          styles.inputContainer,
+          GlobalStyles.input.messageInput.inputContainer,
           isDarkMode && {backgroundColor: Colors.cards.bg.dark},
         ]}>
         <TextInput
@@ -90,7 +91,7 @@ const HastagInput = (): JSX.Element => {
           multiline={true}
           placeholder="Type your message"
           style={[
-            styles.textInput,
+            GlobalStyles.input.messageInput.textInput,
             isDarkMode && {color: Colors.text.primary.dark},
           ]}
           onChangeText={setInput}
@@ -116,21 +117,5 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 26,
     color: Colors.text.primary.light,
-  },
-  inputContainer: {
-    backgroundColor: Colors.cards.bg.light,
-    marginTop: 'auto',
-    flexDirection: 'row',
-    alignItems: 'center',
-    minHeight: 55,
-    maxHeight: 150,
-  },
-  textInput: {
-    flex: 1,
-    paddingHorizontal: 15,
-    color: Colors.text.primary.light,
-    fontSize: 16,
-    fontWeight: '500',
-    maxHeight: 140,
   },
 });

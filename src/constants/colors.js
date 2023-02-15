@@ -6,14 +6,22 @@ export const Colors = {
     },
     placeHolder: {
       light: '#7D7D7D',
-      dark: '#B3B3B3',
+      dark: '#999999',
     },
     link: '#1A8FFC',
   },
   cards: {
     bg: {
       light: '#E2E2E2',
-      dark: '#282C2F',
+      dark: '#313B41',
     },
+    bgInner: {
+      light: '#F4F4F4',
+      dark: '#212426',
+    },
+  },
+  background: {
+    light: '#DAE1E7',
+    dark: '#1F1F1F',
   },
 };
