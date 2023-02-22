@@ -21,7 +21,7 @@ npm install cheerio url-join react-native-fast-image
 yarn add cheerio url-join react-native-fast-image
 ```
 
-Then copy the [URLPreviewCard.tsx](https://github.com/BismarkCodes/rndemo/tree/main/src/demos/url%20preview) file into your project.
+Then copy the [URLPreviewCard.tsx](https://github.com/BismarkCodes/rndemo/blob/main/src/demos/url%20preview/URLPreviewCard.tsx) file into your project.
 
 ## Usage
 
