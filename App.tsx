@@ -12,11 +12,15 @@ import {
   StatusBar,
   StyleSheet,
   useColorScheme,
+  LogBox,
 } from 'react-native';
 import {Colors} from './src/constants/colors';
 import HastagInput from './src/demos/hastagInput/HastagInput';
-import URLPreview from './src/demos/url preview/index';
+import URLPreview from './src/demos/url preview/URLPreview';
 import {useChangeAndroidNavbarColor} from './src/functions/hooks/useChangeAndroidNavbarColor';
+
+// Ignore all warning messages
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';

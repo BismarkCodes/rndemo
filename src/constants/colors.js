@@ -20,6 +20,10 @@ export const Colors = {
       dark: '#212426',
     },
   },
+  border: {
+    light: '#C1C2C2',
+    dark: '#47535F',
+  },
   background: {
     light: '#DAE1E7',
     dark: '#1F1F1F',

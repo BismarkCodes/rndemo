@@ -1,20 +1,14 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  useColorScheme,
-  ScrollView,
-} from 'react-native';
+import {StyleSheet, View, TextInput, useColorScheme} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDebouncedCallback} from 'use-debounce';
 
 import {Colors} from '../../constants/colors';
 import {GlobalStyles} from '../../components/GlobalStyles';
-import HashTagText from '../../components/text/HashTagText';
-import URLPreviewCard from '../../components/cards/URLPreviewCard';
+import URLPreviewCard from './URLPreviewCard';
+import CustomText from '../../components/text/CustomText';
 
-function findUrls(text) {
+// obtain url from text using regex. "bismark's portfolio site is bismarkamanor.vercel.app" should return "bismarkamanor.vercel.app"
+function findUrls(text: string) {
   const urlRegex =
     /(?:(?:(?:https?|ftp):\/\/)?(?:www\.)?|(?:[a-z0-9]+\.))([a-z0-9]+\.[^\s]{2,}|[a-z0-9]+\.[^\s]{2,}\.[a-z]{2,})\.?/gi;
   let result = text.match(urlRegex);
@@ -26,14 +20,18 @@ const URLPreview = (): JSX.Element => {
   const [url, setUrl] = useState('');
 
   const isDarkMode = useColorScheme() === 'dark';
-  const scrollViewRef = React.useRef();
 
   useEffect(() => {
-    setUrl(findUrls(input) || '');
+    updateUrl();
   }, [input]);
+
+  const updateUrl = useDebouncedCallback(() => {
+    setUrl(findUrls(input) || '');
+  }, 500);
 
   return (
     <View style={styles.container}>
+      <CustomText style={styles.bigText}>URL Preview</CustomText>
       <View style={styles.preview}>
         {/* url preview component */}
         <URLPreviewCard
@@ -43,6 +41,7 @@ const URLPreview = (): JSX.Element => {
       <View
         style={[
           GlobalStyles.input.messageInput.inputContainer,
+          {paddingHorizontal: 10},
           isDarkMode && {backgroundColor: Colors.cards.bg.dark},
         ]}>
         <TextInput
@@ -51,7 +50,13 @@ const URLPreview = (): JSX.Element => {
           placeholder="Type your message"
           style={[
             GlobalStyles.input.messageInput.textInput,
+            styles.input,
             isDarkMode && {color: Colors.text.primary.dark},
+            {
+              borderBottomColor: isDarkMode
+                ? Colors.border.dark
+                : Colors.border.light,
+            },
           ]}
           onChangeText={setInput}
           placeholderTextColor={Colors.text.placeHolder.light}
@@ -73,8 +78,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
+  input: {borderBottomWidth: 1, paddingHorizontal: 0},
   text: {
     fontSize: 26,
     color: Colors.text.primary.light,
+  },
+
+  bigText: {
+    fontWeight: '600',
+    fontSize: 50,
+    textAlign: 'center',
+    paddingVertical: 30,
   },
 });
