@@ -22,10 +22,10 @@ const Base64IO = () => {
       /* 
         [{
           "fileCopyUri": null, 
-          "name": "VID-20230226-WA0003.mp4", 
+          "name": "20230226-WA0003.png", 
           "size": 773137, 
-          "type": "video/mp4", 
-          "uri": "content://com.android.providers.media.documents/document/video%3A43839"
+          "type": "image/png", 
+          "uri": "content://com.android.providers.media.documents/document/image%3A43839"
       }]
       */
       .catch(handlePickerError);
