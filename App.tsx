@@ -15,11 +15,8 @@ import {
   LogBox,
 } from 'react-native';
 import {Colors} from './src/constants/colors';
-import HastagInput from './src/demos/hastagInput/HastagInput';
 import URLPreview from './src/demos/url preview/URLPreview';
 import {useChangeAndroidNavbarColor} from './src/functions/hooks/useChangeAndroidNavbarColor';
-import ImageViewer from './src/demos/base64/ImageViewer';
-import PDFViewer from './src/demos/base64/PDFViewer';
 import VideoPlayer from './src/demos/base64/VideoPlayer';
 
 // Ignore all warning messages
@@ -47,7 +44,7 @@ function App(): JSX.Element {
         barStyle={'default'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <VideoPlayer />
+      <URLPreview />
     </SafeAreaView>
   );
 }
