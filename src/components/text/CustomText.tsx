@@ -8,7 +8,8 @@ const CustomText: React.FC<{
   grey?: boolean;
   numberOfLines?: number;
   children?: ReactNode;
-}> = ({style, grey, numberOfLines, children}) => {
+  onPress?: boolean;
+}> = ({style, grey, numberOfLines, children, onPress}) => {
   // get device theme
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -23,6 +24,7 @@ const CustomText: React.FC<{
   };
   return (
     <Text
+      onPress={onPress}
       numberOfLines={numberOfLines}
       style={[GlobalStyles.text, textColor, grey && greyTextColor, style]}>
       {children}
