@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
 import React, {useEffect} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -18,6 +18,7 @@ import {Colors} from './src/constants/colors';
 import URLPreview from './src/demos/url preview/URLPreview';
 import {useChangeAndroidNavbarColor} from './src/functions/hooks/useChangeAndroidNavbarColor';
 import VideoPlayer from './src/demos/base64/VideoPlayer';
+import Preview from './src/demos';
 
 // Ignore all warning messages
 LogBox.ignoreAllLogs(); //Ignore all log notifications
@@ -44,7 +45,8 @@ function App(): JSX.Element {
         barStyle={'default'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <URLPreview />
+      {/* <URLPreview /> */}
+      <Preview />
     </SafeAreaView>
   );
 }

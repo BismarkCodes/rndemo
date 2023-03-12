@@ -109,6 +109,7 @@ const URLPreviewCard: React.FC<{url: string}> = ({url}) => {
   function onPressHandler() {
     Linking.openURL(addHTTP(url.toLowerCase()));
   }
+
   // custom theme
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.cards.bg.dark : Colors.cards.bg.light,
@@ -209,3 +210,4 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 });
+
